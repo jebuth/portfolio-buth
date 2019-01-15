@@ -23,6 +23,7 @@
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-typed": "^1.0.9",
     "reactstrap": "^6.5.0",
     "save": "^2.3.3"
   }

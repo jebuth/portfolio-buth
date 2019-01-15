@@ -1,36 +1,22 @@
-@font-face{
-	font-family: 'Montserrat';
-	src: url('/static/fonts/Montserrat-Regular.ttf');
-	font-weight: normal;
-	font-style: normal;
+@import './shared/fonts';
+// PAGES
+@import './index';
+
+background-index.png
+index.js-layout-scss.txt
+index.js-layout.txt
+section-1.png
+section-2.png
+
+html, body {
+  height:100%;
+  width:100%;
+  font-family: 'Montserrat', 'Helvetica';
 }
 
-@font-face{
-	font-family: 'Montserrat';
-	src: url('/static/fonts/Montserrat-Bold.ttf');
+.self-typed{
+	font-size: 31px;
 	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face{
-	font-family: 'Montserrat';
-	src: url('/static/fonts/Montserrat-Light.ttf');
-	font-weight: lighter;
-	font-style: normal;
-}
-
-@font-face{
-	font-family: 'Montserrat';
-	src: url('/static/fonts/Montserrat-Italic.ttf');
-	font-weight: normal;
-	font-style: italic;
-}
-
-html, body{
-	font-family: 'Montserrat', 'Helvetica' !important;
-}
-
-
-.customClassFromFile{
-	color: blue;
+	letter-spacing: 2px;
+	color: white;
 }
