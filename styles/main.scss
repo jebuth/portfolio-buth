@@ -2,6 +2,9 @@
 // PAGES
 @import './index';
 
+// Compnonents
+@import './header';
+
 background-index.png
 index.js-layout-scss.txt
 index.js-layout.txt
@@ -18,5 +21,14 @@ html, body {
 	font-size: 31px;
 	font-weight: bold;
 	letter-spacing: 2px;
+	color: white;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.base-page{
+	padding-top: 150px;
 	color: white;
 }
