@@ -11,7 +11,7 @@ import {
   NavLink} from 'reactstrap';
 
 
- const BsNavLink = (props) => {
+const BsNavLink = (props) => {
 	const {route, title} = props;
 
 	return(
@@ -19,8 +19,27 @@ import {
 			<a className="nav-link port-navbar-link"> {title} </a>
 		</Link>
 	)
-	
 }
+
+const LogIn = () => {
+	return(
+		<span className="nav-link port-navbar-link clickable">
+			Login
+		</span>
+
+	)
+} 
+
+const LogOut = () => {
+	return(
+		<span className="nav-link port-navbar-link clickable">
+			Logout
+		</span>
+
+	)
+} 
+
+
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -65,6 +84,16 @@ export default class Header extends React.Component {
 
               <NavItem className="port-navbar-item">
 				<BsNavLink route="/cv" title="Cv" />
+              </NavItem>
+
+              <NavItem className="port-navbar-item">
+				<LogIn />
+					
+              </NavItem>
+
+              <NavItem className="port-navbar-item">
+				<LogOut />
+				
               </NavItem>
 
             </Nav>
