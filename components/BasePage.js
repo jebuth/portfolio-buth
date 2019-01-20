@@ -1,8 +1,6 @@
 import {Container} from 'reactstrap';
 
 const BasePage = (props) =>{
-
-	//const className = props.className || '';
 	const {className} = props;
 
 	return (
@@ -12,7 +10,6 @@ const BasePage = (props) =>{
 			</Container>
 		</div>
 	)
-
 }
 
 BasePage.defaultProps = {

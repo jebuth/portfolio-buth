@@ -8,7 +8,7 @@ class Callback extends React.Component{
 	
 	async componentDidMount(){
 		await auth0Client.handleAuthentication();
-		this.props.router.push('/');
+		this.props.router.push('/'); 
 	}
 
 	render(){

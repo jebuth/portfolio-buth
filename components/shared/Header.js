@@ -34,14 +34,11 @@ const LogIn = () => {
 
 const LogOut = () => {
 	return(
-		<span className="nav-link port-navbar-link clickable">
+		<span onClick={auth0.logout} className="nav-link port-navbar-link clickable">
 			Logout
 		</span>
-
 	)
 } 
-
-
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -52,14 +49,17 @@ export default class Header extends React.Component {
       isOpen: false
     };
   }
+  
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
 
-
   render() {
+
+    const {isAuthenticated} = this.props;
+
     return (
       <div>
         <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
@@ -69,35 +69,35 @@ export default class Header extends React.Component {
             <Nav className="ml-auto" navbar>
               
               <NavItem className="port-navbar-item">
-				<BsNavLink route="/" title="Home" />
+				        <BsNavLink route="/" title="Home" />
               </NavItem>
 
               <NavItem className="port-navbar-item">
-				<BsNavLink route="/about" title="About" />
+				        <BsNavLink route="/about" title="About" />
               </NavItem>
 
               <NavItem className="port-navbar-item">
-				<BsNavLink route="/portfolios" title="Portfolio" />
+				        <BsNavLink route="/portfolios" title="Portfolio" />
               </NavItem>
 
               <NavItem className="port-navbar-item">
-				<BsNavLink route="/blogs" title="Blog" />
+				        <BsNavLink route="/blogs" title="Blog" />
               </NavItem>
 
               <NavItem className="port-navbar-item">
-				<BsNavLink route="/cv" title="Cv" />
+				        <BsNavLink route="/cv" title="Cv" />
               </NavItem>
 
-              <NavItem className="port-navbar-item">
-				      <LogIn />
-					
-              </NavItem>
-
-              <NavItem className="port-navbar-item">
-				<LogOut />
-				
-              </NavItem>
-
+              { !isAuthenticated &&
+                <NavItem className="port-navbar-item">
+  				      <LogIn />
+                </NavItem>
+              }
+              { isAuthenticated &&
+                <NavItem className="port-navbar-item">
+  				      <LogOut />
+                </NavItem>
+              }
             </Nav>
           </Collapse>
         </Navbar>
