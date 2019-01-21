@@ -82,6 +82,7 @@ class Auth0 {
   // get set of public keys we can use to verify token
   async getJWKS(){
     //console.log('getJWKS()');
+    debugger;
     const res = await axios.get('https://course1.auth0.com/.well-known/jwks.json');
     const jwks = res.data;
     return jwks;

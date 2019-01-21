@@ -12,7 +12,7 @@ export default function(Component){
 	}
 
 	renderProtectedPage(){
-		debugger;
+
 		const {isAuthenticated} = this.props.auth;
 
 		if(isAuthenticated){

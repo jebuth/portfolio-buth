@@ -1,12 +1,21 @@
-// copied from next.js
-
 const express = require('express');
 const next = require('next');
-const routes = require('./routes');
+const routes = require('../routes');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = routes.getRequestHandler(app);
+
+const secretData = [
+  {
+    title: 'SecretData 1',
+    description: 'Plans to build spaceship'
+  },
+  {
+    title: 'SecretData 2',
+    description: 'My passwords'
+  }
+]
 
 app.prepare()
 .then(() => {
@@ -18,6 +27,11 @@ app.prepare()
   //   const queryParams = { id: req.params.id } 
   //   app.render(req, res, actualPage, queryParams)
   // })
+
+  server.get('/api/v1/secret', (req, res) => {
+
+    return res.json(secretData);
+  })
 
   server.get('*', (req, res) => {
     return handle(req, res)
